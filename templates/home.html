@@ -1,0 +1,121 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Student Exam Performance Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Student Exam Performance Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Brand</label>
+            <select class="form-control" name="brand" placeholder="Brand" required>
+                <option class="placeholder" selected disabled value="">Select your Brand</option>
+                <option value="apple">
+                    Apple
+                </option>
+                <option value="samsung">
+                    Samsung
+                </option>
+                <option value="oneplus">
+                    OnePlus
+                </option>
+                <option value="xiaomi">
+                    Xiaomi
+                </option>
+                <option value="google">
+                    Google
+                </option>
+                <option value="oppo">
+                    Oppo
+                </option>
+                <option value="vivo">
+                    Vivo
+                </option>
+                <option value="realme">
+                    Realme
+                </option>
+                <option value="motorola">
+                    Motorola
+                </option>
+                <option value="nokia">
+                    Nokia
+                </option>
+                <option value="sony">
+                    Sony
+                </option>
+                <option value="lg">
+                    LG
+                </option>
+                <option value="asus">
+                    Asus
+                </option>
+                <option value="blackberry">
+                    BlackBerry
+                </option>
+                <option value="cat">
+                    CAT
+                </option>
+                <option value="huawei">
+                    Huawei
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">storage</label>
+            <input class="form-control" type="number" name="storage"
+                placeholder="Storage" min='10' max='300' />
+        </div>
+
+           <div class="mb-3">
+            <label class="form-label">ram</label>
+            <input class="form-control" type="number" name="ram" value="90"
+                placeholder="RAM" min='1' max='50' />
+        </div>
+
+           <div class="mb-3">
+            <label class="form-label">screen_size</label>
+            <input class="form-control" type="number" step="0.1" name="screen_size"
+                placeholder="Screen size" min='4' max='10' />
+        </div>
+
+           <div class="mb-3">
+            <label class="form-label">camera</label>
+            <input class="form-control" type="number" name="camera"
+                placeholder="Camera" min='1' max='110' />
+        </div>
+
+           <div class="mb-3">
+            <label class="form-label">battery_capacity</label>
+            <input class="form-control" type="number" name="battery_capacity"
+                placeholder="Battery capacity" min='500' max='8000' />
+           </div>
+
+           <div class="mb-3">
+           <select class="form-control" name="camera_count" placeholder="Camera Count" required>
+                <option class="placeholder" selected disabled value="">Select your camera count</option>
+                <option value="1">
+                    1
+                </option>
+               <option value="2">
+                    2
+                </option>
+               <option value="3">
+                    3
+                </option>
+               <option value="4">
+                    4
+                </option>
+               </select>
+        </div>
+
+           <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict mobile price" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+    </div>
+    </body>
+</html>
